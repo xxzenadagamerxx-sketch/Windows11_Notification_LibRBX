@@ -1,5 +1,5 @@
 local Library = {}
-local function MakeWindow(TitleName,MessageText,Debug)
+local function Library.MakeWindow(TitleName,MessageText,Debug)
 
 	if tostring(TitleName) == nil then
 		error("Excepted String at Argument #1 Got "..typeof("TitleName"))
