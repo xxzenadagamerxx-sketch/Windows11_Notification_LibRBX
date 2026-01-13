@@ -1,3 +1,4 @@
+local Library = {}
 local function MakeWindow(TitleName,MessageText,Debug)
 
 	if tostring(TitleName) == nil then
@@ -185,4 +186,4 @@ if Debug == true then
 print("Done,Debug Ended")
 end			
 end
-
+return Library
