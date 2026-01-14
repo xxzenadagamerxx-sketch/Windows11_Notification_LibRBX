@@ -185,6 +185,7 @@ function Library.BindButton(ButtonName,Buttoncallback)
 if typeof(ButtonName) ~= "string" and ButtonName == "OK" or ButtonName == "Cancel" then
 ScreenGui:FindFirstChild("ButtonName").MouseButton1Click:Connect(Buttoncallback)
 end
+end
 				Exit.MouseEnter:Connect(function()
 					Exit.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 				end)
