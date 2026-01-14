@@ -181,11 +181,24 @@ end
 			Cancel.TextSize = 14.000
 			Cancel.TextWrapped = true
 
-function Library.BindButton(ButtonName,Buttoncallback)
-if typeof(ButtonName) ~= "string" and ButtonName == "OK" or ButtonName == "Cancel" then
-ScreenGui:FindFirstChild(ButtonName).MouseButton1Click:Connect(Buttoncallback)
-end
-end
+function Library.BindButton(ButtonName, ButtonCallback)
+    if typeof(ButtonName) ~= "string" then
+        warn("ButtonName must be a string")
+        return
+    end
+
+    if ButtonName ~= "OK" and ButtonName ~= "Cancel" then
+        warn("ButtonName must be 'OK' or 'Cancel'")
+        return
+    end
+
+    local button = ScreenGui:FindFirstChild(ButtonName)
+    if not button then
+        warn("Button not found: " .. ButtonName)
+        return
+		    button.MouseButton1Click:Connect(ButtonCallback)
+    end
+
 				Exit.MouseEnter:Connect(function()
 					Exit.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 				end)
