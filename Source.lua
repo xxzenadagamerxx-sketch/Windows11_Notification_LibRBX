@@ -1,5 +1,5 @@
 local Library = {}
-local function Library.MakeWindow(TitleName,MessageText,Debug)
+ function Library.MakeWindow(TitleName,MessageText,Debug)
 
 	if tostring(TitleName) == nil then
 		error("Excepted String at Argument #1 Got "..typeof("TitleName"))
@@ -11,6 +11,7 @@ local function Library.MakeWindow(TitleName,MessageText,Debug)
 	if Debug == true then
 	print("Playing Sound")
 	end
+    
 local Sound = Instance.new("Sound")
 Sound.Parent = game.Workspace
 	Sound.SoundId = "rbxassetid://112503411915717"
