@@ -181,7 +181,10 @@ end
 			Cancel.TextSize = 14.000
 			Cancel.TextWrapped = true
 
-
+function Library.BindButton(ButtonName,Buttoncallback)
+if typeof(ButtonName) ~= "string" and ButtonName == "OK" or ButtonName == "Cancel" then
+ScreenGui:FindFirstChild("ButtonName").MouseButton1Click:Connect(Buttoncallback)
+end
 				Exit.MouseEnter:Connect(function()
 					Exit.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 				end)
@@ -195,9 +198,6 @@ end
 if Debug == true then
 print("Done,Debug Ended")
 end			
-	   return {
-        OK = OK,
-        Cancel = Cancel
-    }	
+
 end
 return Library
