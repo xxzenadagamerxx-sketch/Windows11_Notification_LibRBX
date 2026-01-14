@@ -17,7 +17,7 @@ local Library = {}
 local Sound = Instance.new("Sound")
 				if typeof(MSound) ~= "boolean" then
 		print("Expected boolean got:"..typeof(MSound).." At Argument 4, Using Default")
-		MSound == true
+		MSound = true
 	end
 	if MSound == true then
 Sound.Parent = game.Workspace
@@ -200,4 +200,4 @@ end
         Cancel = Cancel
     }	
 end
-return Library = Library,
+return Library
