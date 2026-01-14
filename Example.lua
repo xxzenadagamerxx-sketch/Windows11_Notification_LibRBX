@@ -4,3 +4,4 @@ Library.MakeWindow("Example","This is an example window.",false)
 Arg 1 = WindowTitle (string)
 Arg 2 = MainText (string)
 Arg 3 = Debug (bool)
+--]]
