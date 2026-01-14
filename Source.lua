@@ -183,6 +183,18 @@ end
 				Exit.MouseButton1Click:Connect(function()
 					Exit.Parent:Destroy()
 				end)
+	function Library.BindToOK(BindToFunction)
+	OK.MouseButton1Click:Connect(BindToFunction)
+	end
+	function Library.BindToCancel(BindToFunction2)
+	Cancel.MouseButton1Click:Connect(BindToFunction2)
+	end
+	function Library.UpdateOK(UpdatedFunction)
+	OK.MouseButton1Click:Connect(UpdatedFunction)
+	end
+	function Library.UpdateCancel(UpdatedFunction2)
+	Cancel.MouseButton1Click:Connect(UpdatedFunction2)
+	end
 if Debug == true then
 print("Done,Debug Ended")
 end			
