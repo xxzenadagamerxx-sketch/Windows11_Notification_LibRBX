@@ -198,6 +198,7 @@ function Library.BindButton(ButtonName, ButtonCallback)
         return
 		    button.MouseButton1Click:Connect(ButtonCallback)
     end
+	end
 
 				Exit.MouseEnter:Connect(function()
 					Exit.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
@@ -208,10 +209,10 @@ function Library.BindButton(ButtonName, ButtonCallback)
 				Exit.MouseButton1Click:Connect(function()
 					Exit.Parent:Destroy()
 				end)
- 
+
 if Debug == true then
 print("Done,Debug Ended")
 end			
-
 end
 return Library
+
