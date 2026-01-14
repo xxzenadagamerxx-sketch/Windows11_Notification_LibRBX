@@ -1,22 +1,29 @@
 local Library = {}
- function Library.MakeWindow(TitleName,MessageText,Debug)
+ function Library.MakeWindow(TitleName,MessageText,Debug,MSound)
 
 	if tostring(TitleName) == nil then
 		error("Excepted String at Argument #1 Got "..typeof("TitleName"))
 	elseif tostring(MessageText)  == nil then
 		error("Excepted String at Argument #2 Got "..typeof("TitleName"))
 		elseif Debug ~= false and Debug ~= true then
-		error("Excepted Bool at Argument #3 Got "..typeof("TitleName"))
+		warn("Excepted Boolean at Argument #3 Got "..typeof("TitleName")..",Using Default")
+		Debug = false
 	end
 	if Debug == true then
 	print("Playing Sound")
 	end
-    
+
+
 local Sound = Instance.new("Sound")
+				if typeof(MSound) ~= "boolean" then
+		error("Expected boolean got:"..typeof(MSound).." At Argument 4")
+	end
+	if MSound == true then
 Sound.Parent = game.Workspace
 	Sound.SoundId = "rbxassetid://112503411915717"
     Sound.Volume = 0.5
 	Sound:Play()
+	end
 	if Debug == true then
 print("Creating Window")
 	end
@@ -183,20 +190,14 @@ end
 				Exit.MouseButton1Click:Connect(function()
 					Exit.Parent:Destroy()
 				end)
-	function Library.BindToOK(BindToFunction)
-	OK.MouseButton1Click:Connect(BindToFunction)
-	end
-	function Library.BindToCancel(BindToFunction2)
-	Cancel.MouseButton1Click:Connect(BindToFunction2)
-	end
-	function Library.UpdateOK(UpdatedFunction)
-	OK.MouseButton1Click:Connect(UpdatedFunction)
-	end
-	function Library.UpdateCancel(UpdatedFunction2)
-	Cancel.MouseButton1Click:Connect(UpdatedFunction2)
-	end
+ 
 if Debug == true then
 print("Done,Debug Ended")
 end			
 end
-return Library
+   return {
+	Library = Library,
+        OK = OK,
+        Cancel = Cancel
+    }
+	
