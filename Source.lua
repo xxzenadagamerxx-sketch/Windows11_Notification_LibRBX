@@ -6,7 +6,7 @@ local Library = {}
 	elseif tostring(MessageText)  == nil then
 		error("Excepted String at Argument #2 Got "..typeof("TitleName"))
 		elseif Debug ~= false and Debug ~= true then
-		warn("Excepted Boolean at Argument #3 Got "..typeof("TitleName")..",Using Default")
+		warn("Excepted Boolean at Argument #3 Got "..typeof("TitleName")..", Using Default")
 		Debug = false
 	end
 	if Debug == true then
@@ -16,7 +16,8 @@ local Library = {}
 
 local Sound = Instance.new("Sound")
 				if typeof(MSound) ~= "boolean" then
-		error("Expected boolean got:"..typeof(MSound).." At Argument 4")
+		print("Expected boolean got:"..typeof(MSound).." At Argument 4, Using Default")
+		MSound == true
 	end
 	if MSound == true then
 Sound.Parent = game.Workspace
@@ -194,10 +195,9 @@ end
 if Debug == true then
 print("Done,Debug Ended")
 end			
-end
-   return {
-	Library = Library,
+	   return {
         OK = OK,
         Cancel = Cancel
-    }
-	
+    }	
+end
+return Library = Library,
